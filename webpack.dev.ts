@@ -10,8 +10,7 @@ const config = merge(common, {
   devtool: "eval",
   output: {
     chunkFilename: `./[name].js`,
-    filename: `./[name].js`,
-    publicPath: "/"
+    filename: `./[name].js`
   },
   devServer: {
     hot: true,
@@ -29,7 +28,7 @@ const config = merge(common, {
     }),
     new DefinePlugin({
       webpackDevServer: true
-    }),
+    })
   ]
 });
 

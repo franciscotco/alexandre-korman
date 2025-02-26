@@ -1,5 +1,5 @@
 import { resolve } from "path";
-import TerserPlugin from "terser-webpack-plugin";
+
 import { DefinePlugin } from "webpack";
 import { merge } from "webpack-merge";
 
@@ -10,12 +10,10 @@ const config = merge(common, {
   output: {
     filename: "[name].[contenthash].js",
     chunkFilename: "[name].[contenthash].js",
-    path: resolve(__dirname, "dist"),
-    publicPath: "/"
+    path: resolve(__dirname, "dist")
   },
   optimization: {
-    minimize: true,
-    minimizer: [new TerserPlugin()]
+    minimize: true
   },
   cache: {
     type: "filesystem",
@@ -27,7 +25,7 @@ const config = merge(common, {
   plugins: [
     new DefinePlugin({
       webpackDevServer: false
-    }),
+    })
   ]
 });
 

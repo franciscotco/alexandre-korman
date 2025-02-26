@@ -1,17 +1,22 @@
-import React from "react";
-
 import { createRoot } from "react-dom/client";
 
-import App from "./App";
+import App from "./app";
+import "./service-worker";
 
 const createDomNode = (): HTMLElement => {
-  const domNode = document.createElement("div");
+  const domNodeRoot = document.getElementById("root");
 
-  domNode.setAttribute("id", "root");
-  document.body.appendChild(domNode);
-  return domNode;
+  if (domNodeRoot) {
+    return domNodeRoot;
+  } else {
+    const domNode = document.createElement("div");
+
+    domNode.setAttribute("id", "root");
+    document.body.appendChild(domNode);
+    return domNode;
+  }
 };
 
-const root = createRoot(document.getElementById("root") ?? createDomNode());
+const root = createRoot(createDomNode());
 
 root.render(<App />);

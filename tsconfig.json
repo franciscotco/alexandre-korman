@@ -34,10 +34,7 @@
   },
   "include": [
     "src",
-    ".storybook",
-    "webpack.*",
-    "jest.config.ts",
-    "cypress"
+    "webpack.*"
   ],
   "exclude": [
     "node_modules",
