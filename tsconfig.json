@@ -1,7 +1,6 @@
 {
   "compilerOptions": {
     "target": "es5",
-    "types": ["cypress"],
     "lib": [
       "dom",
       "dom.iterable",
@@ -9,23 +8,19 @@
     ],
     "allowJs": false,
     "allowUnreachableCode": false,
-    "allowSyntheticDefaultImports": true,
     "skipLibCheck": true,
     "esModuleInterop": true,
-    "jsx": "react",
+    "allowSyntheticDefaultImports": true,
     "strict": true,
     "forceConsistentCasingInFileNames": true,
-    "noImplicitAny": true,
-    "noImplicitReturns": true,
-    "noUnusedLocals": true,
-    "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true,
     "module": "esnext",
     "moduleResolution": "node",
     "resolveJsonModule": true,
-    "importsNotUsedAsValues": "remove",
     "isolatedModules": true,
     "removeComments": true,
+    "noEmit": false,
+    "jsx": "react-jsx",
     "baseUrl": ".",
     "paths": {
       "@src/*": ["src/*"]
@@ -35,10 +30,6 @@
   "include": [
     "src",
     "webpack.*"
-  ],
-  "exclude": [
-    "node_modules",
-    "dist"
   ],
   "ts-node": {
     "compilerOptions": {

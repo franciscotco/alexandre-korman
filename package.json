@@ -7,17 +7,9 @@
   "version": "1.0.0",
   "private": false,
   "scripts": {
-    "stats": "webpack-bundle-analyzer stats.json",
-    "start": "webpack-dev-server --config webpack.dev.ts",
+    "dev": "webpack-dev-server --config webpack.dev.ts",
     "build": "webpack --config webpack.prod.ts",
-    "deploy": "serve -s ./dist -p 6688",
-    "storybook": "start-storybook -p 6006",
-    "lint:fix": "eslint --config .eslintrc.json --quiet 'src/**/*.{ts,tsx}' --fix",
-    "test": "jest",
-    "extract-compile:en": "formatjs extract 'src/**/*en.ts' --out-file temp.json --flatten --id-interpolation-pattern '[sha512:contenthash:base64:6]' && formatjs compile 'temp.json' --out-file src/locales/messages/en.json && rm temp.json",
-    "extract-compile:fr": "formatjs extract 'src/**/*fr.ts' --out-file temp.json --flatten --id-interpolation-pattern '[sha512:contenthash:base64:6]' && formatjs compile 'temp.json' --out-file src/locales/messages/fr.json && rm temp.json",
-    "extract-compile:languages": "yarn run extract-compile:en && yarn run extract-compile:fr",
-    "cypress:open": "cypress open"
+    "lint:fix": "eslint --config .eslintrc.json --quiet 'src/**/*.{ts,tsx}' --fix"
   },
   "dependencies": {
     "react": "18",
@@ -39,6 +31,7 @@
     "@typescript-eslint/eslint-plugin": "5.53.0",
     "@typescript-eslint/parser": "5.53.0",
     "@webpack-cli/serve": "2.0.1",
+    "css-loader": "7.1.2",
     "eslint": "8.34.0",
     "eslint-config-prettier": "8.6.0",
     "eslint-config-standard": "17.0.0",
@@ -54,7 +47,9 @@
     "eslint-plugin-standard": "5.0.0",
     "eslint-webpack-plugin": "4.0.0",
     "html-webpack-plugin": "5.5.0",
+    "mini-css-extract-plugin": "2.9.2",
     "prettier": "2.8.4",
+    "style-loader": "4.0.0",
     "ts-loader": "9.4.2",
     "ts-node": "10.9.1",
     "webpack": "5.75.0",

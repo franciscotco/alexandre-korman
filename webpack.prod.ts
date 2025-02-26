@@ -8,12 +8,8 @@ import common from "./webpack.common";
 const config = merge(common, {
   mode: "production",
   output: {
-    filename: "[name].[contenthash].js",
-    chunkFilename: "[name].[contenthash].js",
+    filename: "[name].js",
     path: resolve(__dirname, "dist")
-  },
-  optimization: {
-    minimize: true
   },
   cache: {
     type: "filesystem",

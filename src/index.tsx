@@ -1,7 +1,6 @@
 import { createRoot } from "react-dom/client";
 
 import App from "./app";
-import "./service-worker";
 
 const createDomNode = (): HTMLElement => {
   const domNodeRoot = document.getElementById("root");
