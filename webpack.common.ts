@@ -1,5 +1,3 @@
-import { resolve } from "path";
-
 import HtmlWebpackPlugin from "html-webpack-plugin";
 import MiniCssExtractPlugin from "mini-css-extract-plugin";
 import { type Configuration } from "webpack";
@@ -12,11 +10,7 @@ const config: Configuration = {
     clean: true
   },
   resolve: {
-    alias: {
-      "@src": resolve(__dirname, "src/")
-    },
-    extensions: [".tsx", ".ts", ".js", ".jsx", ".json", ".css"],
-    modules: ["node_modules"]
+    extensions: [".tsx", ".ts", ".js"]
   },
   module: {
     rules: [
@@ -26,17 +20,31 @@ const config: Configuration = {
         exclude: /node_modules/
       },
       {
-        test: /\.css$/i,
-        use: [MiniCssExtractPlugin.loader, "css-loader"]
+        test: /\.css$/,
+        use: [MiniCssExtractPlugin.loader, "css-loader"],
+        exclude: /node_modules/
+      },
+      {
+        test: /\.(mp4|webm|ogg|avi|mov)$/,
+        use: {
+          loader: "file-loader",
+          options: {
+            name: "[name].[hash].[ext]",
+            outputPath: "videos"
+          }
+        },
+        exclude: /node_modules/
       }
     ]
   },
   plugins: [
     new MiniCssExtractPlugin({
-      filename: "styles.css"
+      filename: "[name].css"
     }),
     new HtmlWebpackPlugin({
-      template: "./public/index.html"
+      template: "./public/index.html",
+      filename: "index.html",
+      inject: true
     })
   ]
 };

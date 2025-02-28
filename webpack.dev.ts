@@ -1,15 +1,14 @@
 import ESLintPlugin from "eslint-webpack-plugin";
-import { DefinePlugin } from "webpack";
-import "webpack-dev-server";
 import { merge } from "webpack-merge";
 
 import common from "./webpack.common";
+
+import "webpack-dev-server";
 
 const config = merge(common, {
   mode: "development",
   devtool: "eval",
   output: {
-    chunkFilename: `./[name].js`,
     filename: `./[name].js`
   },
   devServer: {
@@ -25,9 +24,6 @@ const config = merge(common, {
       fix: true,
       failOnError: false,
       emitWarning: true
-    }),
-    new DefinePlugin({
-      webpackDevServer: true
     })
   ]
 });

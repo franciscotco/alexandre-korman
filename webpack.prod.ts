@@ -1,28 +1,15 @@
 import { resolve } from "path";
 
-import { DefinePlugin } from "webpack";
 import { merge } from "webpack-merge";
 
 import common from "./webpack.common";
 
 const config = merge(common, {
-  mode: "production",
+  mode: "development",
   output: {
     filename: "[name].js",
     path: resolve(__dirname, "dist")
-  },
-  cache: {
-    type: "filesystem",
-    compression: "gzip",
-    buildDependencies: {
-      config: [__filename]
-    }
-  },
-  plugins: [
-    new DefinePlugin({
-      webpackDevServer: false
-    })
-  ]
+  }
 });
 
 export default config;

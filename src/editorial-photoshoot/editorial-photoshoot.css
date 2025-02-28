@@ -1,0 +1,36 @@
+.editorial-photoshoot--image-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  padding: 16px;
+  gap: 16px;
+  @media (min-width: 1250px) {
+    gap: 32px;
+    padding: 32px;
+  }
+}
+
+.editorial-photoshoot--image-block {
+  display: flex;
+  justify-content: center;
+
+  flex-direction: column;
+  gap: 16px;
+  @media (min-width: 1250px) {
+    width: 100%;
+    flex-direction: row;
+    gap: 32px;
+  }
+}
+
+.editorial-photoshoot--image-rectangle {
+  height: 580px;
+  width: 100%;
+  max-width: 390px;
+  @media (min-width: 1250px) {
+    height: 940px;
+    max-width: 630px;
+  }
+}

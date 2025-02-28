@@ -29,7 +29,8 @@
   },
   "include": [
     "src",
-    "webpack.*"
+    "webpack.*",
+    "declarations"
   ],
   "ts-node": {
     "compilerOptions": {
