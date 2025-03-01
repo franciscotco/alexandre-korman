@@ -34,6 +34,14 @@ const config: Configuration = {
           }
         },
         exclude: /node_modules/
+      },
+      {
+        test: /\.(woff|woff2|eot|ttf|otf)$/i,
+        type: "asset/resource",
+        generator: {
+          filename: "assets/[name][ext]"
+        },
+        exclude: /node_modules/
       }
     ]
   },

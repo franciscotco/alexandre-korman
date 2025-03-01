@@ -2,6 +2,24 @@
  * RESET STYLES
  */
 
+@font-face {
+  font-family: "Alexandre Korman";
+  src: url("./assets/alexandre-regular.woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Alexandre Korman";
+  src: url("./assets/alexandre-bold.woff2");
+  font-weight: bold;
+  font-style: bold;
+}
+
+html {
+  font-family: "Alexandre Korman";
+}
+
 body {
   margin: 0px;
 }

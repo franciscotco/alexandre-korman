@@ -5,8 +5,13 @@
 
 .app--close-menu {
   position: fixed;
-  top: 16px;
-  right: 16px;
+  top: 8px;
+  right: 8px;
+  @media (min-width: 1250px) {
+    top: 16px;
+    right: 16px;
+  }
+
   display: flex;
   align-items: center;
   justify-content: center;
@@ -14,8 +19,16 @@
   height: 32px;
   background-color: white;
   border: 1px solid black;
-  border-radius: 4px;
+  border-radius: 2px;
   z-index: 1;
+}
+
+#close-menu {
+  visibility: hidden;
+}
+
+#close-menu:not(:target) {
+  visibility: visible;
 }
 
 .app--menu-list {
@@ -25,7 +38,8 @@
 }
 
 .app--menu-item--title {
-  font-size: 64px;
+  font-size: 60px;
+  line-height: 60px;
   font-weight: 700;
   font-style: normal;
   line-height: 64px;
