@@ -1,6 +1,7 @@
-import videoAlexandre from "./videos/alexandre-korman.mp4";
 import yt1518 from "./videos/yt-1518.mp4";
 import tsunami from "./videos/tsunami.mp4";
+import zeitDriver from "./videos/zeit-driver.mp4";
+import cmFalter from "./videos/cm-falter.mp4";
 
 import "./music-videoclip.css";
 
@@ -23,8 +24,8 @@ export function MusicVideoclip() {
         frameBorder={0}
       />
       <div className="app-global--video-rectangle app-global--frame">
-        <video className="app-global--video" playsInline disablePictureInPicture autoPlay muted loop>
-          <source src={videoAlexandre} type="video/mp4" />
+        <video className="app-global--video" width={960} playsInline disablePictureInPicture autoPlay muted loop>
+          <source src={zeitDriver} type="video/mp4" />
         </video>
       </div>
       <iframe
@@ -38,7 +39,7 @@ export function MusicVideoclip() {
         frameBorder={0}
       />
       <div className="app-global--video-rectangle app-global--frame">
-        <video className="app-global--video" playsInline disablePictureInPicture autoPlay muted loop>
+        <video className="app-global--video" width={960} playsInline disablePictureInPicture autoPlay muted loop>
           <source src={tsunami} type="video/mp4" />
         </video>
       </div>
@@ -63,8 +64,8 @@ export function MusicVideoclip() {
         frameBorder={0}
       />
       <div className="app-global--video-rectangle app-global--frame">
-        <video className="app-global--video" playsInline disablePictureInPicture autoPlay muted loop>
-          <source src={videoAlexandre} type="video/mp4" />
+        <video className="app-global--video" width={960} playsInline disablePictureInPicture autoPlay muted loop>
+          <source src={cmFalter} type="video/mp4" />
         </video>
       </div>
     </div>
